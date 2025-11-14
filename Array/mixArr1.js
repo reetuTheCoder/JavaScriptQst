@@ -80,9 +80,9 @@ function arrMixFirstSecondLeftRestRight(...arrs) {
       console.log("arr val", arr);
 
       if (index === 0 || index === 2) {
-      if (i <arr.length) {
+        if (i < arr.length) {
           output.push(arr[i]);
-      }
+        }
       } else {
         let indexFromRigh = arr.length - 1 - i;
         // console.log(indexFromRigh);
@@ -97,4 +97,74 @@ function arrMixFirstSecondLeftRestRight(...arrs) {
   return output;
 }
 
-console.log(arrMixFirstSecondLeftRestRight(arr1, arr2, arr3));
+// console.log(arrMixFirstSecondLeftRestRight(arr1, arr2, arr3));
+
+function mixN_Array(...arrays) {
+  let output = [];
+
+  let getLength = Math.max(...arrays.map((arr) => arr.length));
+  // console.log(getLength);
+
+  for (let i = 0; i < getLength; i++) {
+    // console.log("value of iii", i);
+
+    for (const arrs of arrays) {
+      console.log("arrsss", arrs[i]);
+      if (i < arrs.length) {
+        output.push(arrs[i]);
+      }
+    }
+  }
+
+  return output;
+}
+
+// console.log(mixN_Array(arr1, arr2));
+
+function mix_towEleOf_both_arr(chukingNoOf, ...arrays) {
+  let output = [];
+
+  let getLength = Math.max(...arrays.map((arr) => arr.length));
+
+  for (let i = 0; i < getLength; i += chukingNoOf) {
+    // console.log("value of iii", i);
+
+    for (const arrs of arrays) {
+      //   console.log(i,"arrs...", arrs);
+      let chunkPart = arrs.slice(i, i + chukingNoOf);
+      console.log(chukingNoOf, "chunkPartchunkPart", chunkPart);
+
+      output.push(...chunkPart);
+    }
+  }
+
+  return output;
+}
+
+// console.log(mix_towEleOf_both_arr(2, arr1, arr2));
+
+function mix_customChunks(chunkSizes, ...arrays) {
+  let output = [];
+
+  let maxLen = Math.max(...arrays.map((arr) => arr.length));
+
+  for (let i = 0; i < maxLen; i++) {
+    arrays.forEach((arr, index) => {
+      let chunkSize = chunkSizes[index] || 1;
+    //   console.log("chunkSize", chunkSize);
+
+      let chunkEle = arr.slice(i, i + chunkSize);
+    //   console.log("chunkchunk -", chunkEle);
+      output.push(...chunkEle);
+    });
+
+    i += Math.max(...chunkSizes) - 1;
+
+    // console.log("i value", i);
+    
+  }
+
+  return output;
+}
+
+console.log(mix_customChunks([2, 1], arr1, arr2, arr3));

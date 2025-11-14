@@ -1,6 +1,6 @@
 let arr1 = [1, 2, 3, 4, 5];
 let arr2 = [5, 7, 8, 9];
-let arr3 = [10, 11, 12, 13];
+let arr3 = [10, 11, 12, 13, 14];
 
 function mixArrayOneByOne(arr1, arr2) {
   let output = [];
@@ -65,9 +65,6 @@ function mixArrayThreeByOne(arr1, arr2) {
 
 // console.log(mixArrayThreeByOne(arr1, arr2));
 
-
-
-
 function mixN_Array(...arrays) {
   let output = [];
 
@@ -85,8 +82,70 @@ function mixN_Array(...arrays) {
     }
   }
 
-  return output
+  return output;
+}
+// console.log("arr1", arr1, "arr2", arr2, "arr3", arr3);
+
+// console.log(mixN_Array(arr1, arr2, arr3));
+
+function mixN_Array_treverseFromRight(...arrays) {
+  let output = [];
+
+  let getLength = Math.max(...arrays.map((arr) => arr.length));
+  // console.log(getLength);
+
+  for (let i = 0; i < getLength; i++) {
+    // console.log("value of iii", i);
+
+    for (const arrs of arrays) {
+      let indexFromEnd = arrs.length - 1 - i;
+
+      //  console.log("indexFromEnd", indexFromEnd);
+
+      if (indexFromEnd >= 0) {
+        output.push(arrs[indexFromEnd]);
+      }
+    }
+  }
+
+  return output;
+}
+// console.log("arr1", arr1, "arr2", arr2, "arr3", arr3);
+
+// console.log(mixN_Array_treverseFromRight(arr1, arr2, arr3));
+
+
+
+
+function mixN_Array_first_left_restRight(...arrays) {
+  let output = [];
+
+  let maxLength = Math.max(...arrays.map((arr) => arr.length));
+
+  for (let i = 0; i < maxLength; i++) {
+    //  console.log("arrys", arrays);
+
+    arrays.forEach((arr, index) => {
+      // console.log(index,"arr", arr);
+
+      if (index === 0) {
+        if (i < arr.length) {
+          output.push(arr[i]);
+        }
+      } else {
+        let revIndex = arr.length - 1 - i;
+        console.log(revIndex);
+
+        if (revIndex >= 0) {
+          output.push(arr[revIndex]);
+        }
+        
+      }
+    });
+  }
+
+  return output;
 }
 console.log("arr1", arr1, "arr2", arr2, "arr3", arr3);
 
-console.log(mixN_Array(arr1, arr2, arr3));
+console.log(mixN_Array_first_left_restRight(arr1, arr2, arr3));

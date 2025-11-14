@@ -115,8 +115,6 @@ function mixN_Array_treverseFromRight(...arrays) {
 // console.log(mixN_Array_treverseFromRight(arr1, arr2, arr3));
 
 
-
-
 function mixN_Array_first_left_restRight(...arrays) {
   let output = [];
 

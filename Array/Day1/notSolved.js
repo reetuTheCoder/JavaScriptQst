@@ -6,6 +6,7 @@ let color = ["red", "green", "pink", "purple", "gold"];
 
 let convertMap = new Map(color.map((ele, index) => [index, ele]))
 
+
 console.log(convertMap);
 
 

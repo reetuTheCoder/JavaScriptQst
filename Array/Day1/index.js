@@ -46,13 +46,37 @@ let nestedArr1 = ["red", ["green", ["pink"]]];
 
 console.log(nestedArr.flat(Infinity));
 
-
 ////8 Use reduce to reverse an array (no reverse()) Reverse array using only .reduce().
 
-// it is not good for porfomance 
+// it is not good for porfomance
 let reverseArr = color.reduce((acc, val) => {
   acc.unshift(val);
 
   return acc;
 }, []);
 console.log(reverseArr);
+
+let freq = {};
+for (const ele of color) {
+  let len = ele.length;
+  freq[len] = [ele];
+}
+console.log(freq);
+
+
+let arrOfObj =  color.map((ele, index)=> ({
+    index : index,
+    value : ele
+}))
+
+console.log(arrOfObj);
+
+let arrObj = []
+for (let i = 0; i < color.length; i++) {
+    {arrObj.push(i),
+        arrObj.push(color[i])
+    }
+    
+}
+
+console.log(arrObj);

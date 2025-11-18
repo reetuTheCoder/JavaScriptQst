@@ -68,7 +68,29 @@ let ferqVal = newColor.reduce((acc, val) => {
 
 let nestedArr = ["red", ["green", "light-green"], "pink"];
 
-console.log(nestedArr.flat(Infinity));
+// console.log(nestedArr.flat(Infinity));
 
 
 
+
+const arr = [1, 2, 3, 3];
+
+let newArr = new Set(arr)
+// console.log(newArr);
+
+
+
+console.log("original arr", color);
+
+
+const obj = {
+  _color: ["red", "green", "pink"],
+
+  get color() {
+    return [...this._color] 
+  }
+}
+
+console.log(obj.color);       
+obj.color.push("blue");      
+console.log(obj.color); 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #parent {
+      border: 2px solid red;
+      padding: 50px;
+    }
+  </style>
+  <body>
+    <div id="parent">
+      <button id="child">Click me</button>
+    </div>
+
+    <form id="submit">
+      <button>Submit</button>
+    </form>
+
+
+
+  <a href="https://www.google.com/" id="myGoogleLink" target="_blank">Go to google</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      // e.stopPropagation()
+      let button = document.getElementById("child");
+      let parnetDiv = document.getElementById("parent");
+
+      parnetDiv.addEventListener("click", () => {
+        console.log("parnetDiv clicked");
+      });
+
+      button.addEventListener("click", (e) => {
+        e.stopPropagation(); // befor it whenever i call on the button parent event was calling autometically
+        console.log("child button clicked");
+      });
+    </script>
+
+    <script>
+      // e.preventDefault()
+      let formSection = document.getElementById("submit");
+       let googleLink = document.getElementById("myGoogleLink");
+
+      formSection.addEventListener("submit", (e) => {
+        e.preventDefault()  // without it when ever you will click onthesubmit button it will refresh the page
+        console.log("form not submited");
+      });
+
+      googleLink.addEventListener("click", (e)=>{
+        e.preventDefault() // if you will use it link will be clicked but not nevigate
+        console.log("you clicked on link");
+        
+      })
+    </script>
+  </body>
+</html>

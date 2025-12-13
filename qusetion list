@@ -1,0 +1,21 @@
+let arr = ["x","x","z","z","y","x"]
+
+Q1. arrange arr based on freq like ["y","z","z","x","x","x"]
+
+Q2. remove duplicate from like ["x","y","z"]
+
+Q3. reverse array without reverse() method
+
+Q4. count total subarray
+
+Q5. show max length subarray
+
+Q6. longest increasing order subarray
+
+Q7. smallest increasing order subarray
+
+Q8.  make decresing subarray
+
+Q9. rotate array k time and k = 2 like ["x","y", "x","x","z","z"];
+
+Q10. add all "z" at the end of the arr

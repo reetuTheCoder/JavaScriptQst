@@ -12,9 +12,9 @@ let subarr = arr.slice();
 
 for (let i = 0; i < k; i++) {
   const lastEle = subarr[subarr.length - 1];
-//   console.log("ele", lastEle);
+  //   console.log("ele", lastEle);
 
-  for (let j = 0; j < subarr.length; j++) {
+  for (let j = subarr.length - 1; j >= 0; j--) {
     subarr[j] = subarr[j - 1];
 
     subarr[0] = lastEle;

@@ -1,5 +1,5 @@
-// let arr = ["x", "x", "z", "z", "y", "x"];
-let arr = ["x", "y", "z"];
+let arr = ["x", "x", "z", "z", "y", "x"];
+// let arr = ["x", "y", "z"];
 
 // [x]
 // [x,y]
@@ -9,7 +9,7 @@ let arr = ["x", "y", "z"];
 // [z]
 
 let longSubArr = [];
-let maxlen = 0;
+let maxlen = Infinity;
 
 for (let i = 0; i < arr.length; i++) {
   let sub = [arr[i]]; // stored i first ele
@@ -25,7 +25,7 @@ for (let i = 0; i < arr.length; i++) {
       //  console.log("sub111", sub);
     }
 
-    if (sub.length > maxlen) {
+    if (sub.length >= 2 && sub.length < maxlen) {
       maxlen = sub.length;
       longSubArr = sub;
     }

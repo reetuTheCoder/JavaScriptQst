@@ -19,3 +19,5 @@ Q8.  make decresing subarray
 Q9. rotate array k time and k = 2 like ["x","y", "x","x","z","z"];
 
 Q10. add all "z" at the end of the arr
+
+Q11. Longest subarray without repeating elements

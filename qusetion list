@@ -21,3 +21,15 @@ Q9. rotate array k time and k = 2 like ["x","y", "x","x","z","z"];
 Q10. add all "z" at the end of the arr
 
 Q11. Longest subarray without repeating elements
+
+Q12. Count frequency of each element
+
+Q13. Find first non-repeating element
+
+Q14. Find all subarrays of length = 3
+
+Q15. Check if array is monotonic (increasing or decreasing)
+
+Q16. Find longest subarray with same elements
+
+Q17. Group same elements together (order doesn't matter) without sort() like ["x","x","x","z","z","y"]

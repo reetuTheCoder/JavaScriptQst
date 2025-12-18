@@ -9,18 +9,18 @@ for (const key of arr) {
 console.log(freq);
 
 let group = [];
-////// order like this  [ 'y', 'z', 'z', 'x', 'x', 'x' ]
+////// order like this  [ 'x', 'x', 'x', 'z', 'z', 'y' ]
 
 
 
-// for (const [key, value] of freq) {
-//     for (let i = 0; i < value; i++) {
-//         group.push(key)
+for (const [key, value] of freq) {
+    for (let i = 0; i < value; i++) {
+        group.push(key)
         
-//     }
-// }
+    }
+}
 
-// console.log(group);
+console.log(group);
 
 
 //////// order like this [ 'y', 'z', 'z', 'x', 'x', 'x' ]
@@ -48,12 +48,12 @@ let entries = [...freq.entries()].reverse();
 let order = ["z", "x", "y"]; 
 
 
-for (const key of order) {
-    let value = freq.get(key);
-    for (let i = 0; i < value; i++) {
-        group.push(key)
+// for (const key of order) {
+//     let value = freq.get(key);
+//     for (let i = 0; i < value; i++) {
+//         group.push(key)
         
-    }
-}
+//     }
+// }
 
-console.log(group);
+// console.log(group);
